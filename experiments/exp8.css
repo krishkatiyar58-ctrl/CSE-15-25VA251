@@ -1,0 +1,33 @@
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f4f4f4;
+}
+
+.counter-box{
+width:300px;
+margin:100px auto;
+padding:30px;
+text-align:center;
+background:white;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.pos{
+color:green;
+}
+
+.neg{
+color:red;
+}
+
+.buttons button{
+margin:5px;
+padding:10px 15px;
+border:none;
+background:#007bff;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
