@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object in JS</title>
+</head>
+<body>
+    <script>
+        let student={
+            name:"Abhay", 
+            age:23, 
+            eMail:"abhay23@gmail.com", 
+            isMarried:false,
+            address:{
+                streeNo:23,
+                area:"Indrapura",
+                pincode:201009,
+                city:"GZB"
+            },
+            education:null,
+            branch:"CSE",
+            year:2025,
+            getInfo:function(){
+                return "my branch is " + student.branch + " and year is " + student.year;
+            },
+            coruseSubjects:["Math","COA","OS", "DSA", "AI"],
+            passOut:false 
+        }
+
+       // console.log(student.getInfo()); //function
+        //console.log(student.coruseSubjects[2]); //array
+       // console.log(student.address.streeNo); // object
+
+        for( let x in student){
+            console.log(x + " : "+ student[x]);
+        }
+        // using new keyword
+
+        let studentInfo=new Object();
+        studentInfo.name="Vikas";
+        studentInfo.age=25;
+        studentInfo.mob=67876867;
+
+        //access keys using [] notation
+        console.log(studentInfo['name']);
+    </script>
+    
+</body>
+</html>
