@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Introduction</title>
+</head>
+<body>
+    <h2>Java Script</h2>
+    <script>
+        // JS Variables --------container that keeps either value or not
+      /*   JavaScript variables are named containers for storing data values that can be used and modified throughout a program. They are declared using the keywords let, const, and var, with let and const being recommended in modern JavaScript. JavaScript is a dynamically-typed language, meaning you don't need to specify the data type (e.g., number, string) when declaring a variable. */
+      
+      // using var keyword
+      var myName="ABES";
+      //The document in JavaScript is a global object that represents the web page loaded in the browser.
+      document.write(myName); // output on browser
+      console.log(myName); // o/p on console window
+// JS Exectiuon and Scope in JS (Global and Local[block])
+      function hello(){
+           var msg="Thanks to Visit!";
+           console.log(msg);  // local or block
+           //console.log(myName);  // global
+      }
+      hello();
+
+      // variable declration using let and const
+
+      let myRollno=2025132001;
+      console.log(myRollno);
+
+      myRollno=2025132002; // no redeclare but can reassigned
+      console.log(myRollno);
+
+      const myPhoneno=45654654464535353;
+      console.log("My contact no is "+ myPhoneno);
+
+      // myPhoneno=23423432;  // no redecalre and no reassgined
+      console.log(myPhoneno);
+/* In JavaScript, var has function scope and allows re-declaration, while let and const are block-scoped and cannot be re-declared in the same scope. var and let allow reassignment, but const creates a read-only constant (though objects can be modified). var is hoisted to the top of its scope; let/const are not. */
+
+    </script>
+</body>
+</html>
