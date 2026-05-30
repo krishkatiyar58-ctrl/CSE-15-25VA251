@@ -1,0 +1,46 @@
+{
+  "hash": "1a6999bf",
+  "configHash": "f01da06e",
+  "lockfileHash": "9832e533",
+  "browserHash": "0d45d1bd",
+  "optimized": {
+    "react": {
+      "src": "../../react/index.js",
+      "file": "react.js",
+      "fileHash": "25e7e34b",
+      "needsInterop": true
+    },
+    "react-dom": {
+      "src": "../../react-dom/index.js",
+      "file": "react-dom.js",
+      "fileHash": "7a1797f3",
+      "needsInterop": true
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "be30fb44",
+      "needsInterop": true
+    },
+    "react/jsx-runtime": {
+      "src": "../../react/jsx-runtime.js",
+      "file": "react_jsx-runtime.js",
+      "fileHash": "89b5d9ea",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "75a450ac",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-CV26HAPY": {
+      "file": "chunk-CV26HAPY.js"
+    },
+    "chunk-BMYNUFNC": {
+      "file": "chunk-BMYNUFNC.js"
+    }
+  }
+}
