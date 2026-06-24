@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks and Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #eef;
+            border-radius: 5px;
+        }
+
+        .pass {
+            color: green;
+            font-weight: bold;
+        }
+
+        .fail {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Marks & Grade Calculator</h2>
+
+    <label>Number of Subjects:</label>
+    <input type="number" id="numSubjects" min="1">
+
+    <button onclick="generateInputs()">Generate Subjects</button>
+
+    <div id="marksInputs"></div>
+
+    <button onclick="calculateResult()">Calculate Result</button>
+
+    <div id="output" class="result"></div>
+</div>
+
+<script>
+    function generateInputs() {
+        let num = document.getElementById("numSubjects").value;
+        let container = document.getElementById("marksInputs");
+
+        container.innerHTML = "";
+
+        for (let i = 1; i <= num; i++) {
+            container.innerHTML += `
+                <input type="number" id="mark${i}"
+                       placeholder="Enter marks for Subject ${i}"
+                       min="0" max="100">
+            `;
+        }
+    }
+
+    function calculateResult() {
+        let num = parseInt(document.getElementById("numSubjects").value);
+
+        if (!num || num <= 0) {
+            alert("Please enter a valid number of subjects.");
+            return;
+        }
+
+        let total = 0;
+        let pass = true;
+
+        for (let i = 1; i <= num; i++) {
+            let marks = parseFloat(document.getElementById(`mark${i}`).value);
+
+            if (isNaN(marks)) {
+                alert(`Please enter marks for Subject ${i}`);
+                return;
+            }
+
+            total += marks;
+
+            if (marks < 35) {
+                pass = false;
+            }
+        }
+
+        let average = total / num;
+        let grade = "";
+
+        if (average >= 90) {
+            grade = "A+";
+        } else if (average >= 80) {
+            grade = "A";
+        } else if (average >= 70) {
+            grade = "B";
+        } else if (average >= 60) {
+            grade = "C";
+        } else if (average >= 50) {
+            grade = "D";
+        } else {
+            grade = "F";
+        }
+
+        document.getElementById("output").innerHTML = `
+            <h3>Result</h3>
+            <p><strong>Total Marks:</strong> ${total}</p>
+            <p><strong>Average:</strong> ${average.toFixed(2)}</p>
+            <p><strong>Grade:</strong> ${grade}</p>
+            <p class="${pass ? 'pass' : 'fail'}">
+                ${pass ? 'PASS' : 'FAIL'}
+            </p>
+        `;
+    }
+</script>
+
+</body>
+</html>
